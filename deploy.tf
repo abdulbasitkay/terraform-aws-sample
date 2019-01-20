@@ -55,7 +55,7 @@ resource "aws_security_group" "defaultsg" {
 
 resource "aws_key_pair" "auth" {
   key_name   = "abulkay"
-  public_key = "${file(./abulkay.pub)}"
+  public_key = "${file("./abulkay.pub")}"
 }
 
 resource "aws_instance" "http-echo" {
