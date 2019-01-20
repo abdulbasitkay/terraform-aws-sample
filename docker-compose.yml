@@ -1,0 +1,19 @@
+version: '2'
+services:
+    front:
+        image: strm/nginx-balancer
+        container_name: load-balancer
+        ports:
+            - "80:8080"
+        environment:
+            - "NODES=web1:5678 web2:5678"
+    web1:
+        image: hashicorp/http-echo
+        command: -text="hello"
+        ports:
+            - "8080:5678"
+    web2:
+        image: hashicorp/http-echo
+        command: -text="good bye"
+        ports:
+            - "8181:5678"
