@@ -59,7 +59,7 @@ resource "aws_instance" "http-echo" {
     type     = "ssh"
     # username for our AMI
     user = "ec2-user"
-    private_key = "${var.private_key}"
+    private_key = "${var.access_key}"
 
   }
 
