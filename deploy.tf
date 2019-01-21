@@ -49,10 +49,10 @@ resource "aws_security_group" "defaultsg" {
   }
 }
 
-#resource "aws_key_pair" "auth" {
-  #key_name   = "abulkay"
-  #public_key = "${file("./abulkay.pub")}"
-#}
+resource "aws_key_pair" "auth" {
+  key_name   = "abulkay"
+  public_key = "${file("./abulkay.pub")}"
+}
 
 resource "aws_instance" "http-echo" {
   connection {
@@ -66,9 +66,20 @@ resource "aws_instance" "http-echo" {
   ami           = "ami-01e24be29428c15b2"
   instance_type = "t2.micro"
 
-  #key_name = "${aws_key_pair.auth.id}"
+  key_name = "${aws_key_pair.auth.id}"
   vpc_security_group_ids = ["${aws_security_group.defaultsg.id}"]
-  user_data = ${file("data.sh")}
+  user_data = <<-EOF
+              #!/usr/bin/env bash
+              sudo yum -y update
+              sudo yum -y install docker
+              sudo usermod -aG docker $USER
+              sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+              sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+              sudo docker-compose --version
+              git clone https://github.com/abdulbasitkay/terraform-aws-sample.git
+              cd terraform-aws-sample
+              sudo docker-compose up -d
+              EOF
 
 }
 
