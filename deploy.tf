@@ -68,7 +68,7 @@ resource "aws_instance" "http-echo" {
 
   key_name = "${aws_key_pair.auth.id}"
   vpc_security_group_ids = ["${aws_security_group.defaultsg.id}"]
-  user_data = ${file("data.tf")}
+  user_data = ${file("data.sh")}
 
 }
 
