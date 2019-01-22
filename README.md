@@ -3,7 +3,7 @@ Continuous Deployment of sample application to aws using VSTS and Terraform
 
 In this repo are files needed by vsts to provision an aws instance then initilise it by starting a docker-compose up.
 
-![Flow](./Flow.PNG)
+![Flow](./Flow.png)
 
 The image shows the flow. 
 1. A developer triggers the pipeline with either a commit to git to this repo (no yet enbled) or directly on vsts. 
