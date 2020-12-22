@@ -14,7 +14,7 @@ The image shows the flow.
 [VSTS link](https://dev.azure.com/abdulbasitkay/http-echo/_apps/hub/ms.vss-releaseManagement-web.cd-release-progress?_a=release-pipeline-progress&releaseId=62) : https://dev.azure.com/abdulbasitkay/http-echo/_apps/hub/ms.vss-releaseManagement-web.cd-release-progress?_a=release-pipeline-progress&releaseId=62
 
 ## test
-Test would be done manually by a user by visiting on a web browser the aws domain as can be found in the logs of the ferraform job. The fist instnace of the app (http-echo) is on port 8080 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:8080) and the second is on 8181 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:8080). the load balanced app is on port 80 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:80)
+Test would be done manually by a user by visiting on a web browser the aws domain as can be found in the logs of the ferraform job. The fist instnace of the app (http-echo) is on port 8080 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:8080) and the second is on 8181 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:8181). the load balanced app is on port 80 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:80)
 
 ## To be added
 1. automated test
