@@ -16,7 +16,7 @@ The image shows the flow.
 ## test
 Test would be done manually by a user by visiting on a web browser the aws domain as can be found in the logs of the ferraform job. The fist instnace of the app (http-echo) is on port 8080 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:8080) and the second is on 8181 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:8181). the load balanced app is on port 80 (example ec2-xx-xx-xx-xxx.us-west-2.compute.amazonaws.com:80)
 
-## To be added
+## Improvements
 1. automated test
 2. persist terraform state file arrors multiple releases
 3. use ansible to configure instances
